@@ -3,30 +3,40 @@
   @tailwind utilities;
 
   ::-webkit-scrollbar {
+    opacity: 0;
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar:hover {
+    opacity: 0.2;
     width: 6px;
     height: 6px;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
+    opacity: 0;
     background: #20202018;
-  
+    border-radius: 5px;
   }
   ::-webkit-scrollbar-track:hover {
-    background: #202020a1;
+    opacity: 0.2;
+    background: #2e2b2b51;
     transition: all 0.3s;
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #58585856;
+    opacity: 0;
+    background: #58585815;
     border-radius: 5px;
     cursor: pointer;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    opacity: 0.2;
+    background: #5555556f;
   }
 
   @layer base {

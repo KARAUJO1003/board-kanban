@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { DndProviders } from "@/providers/dnd-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { NavMenu } from "@/components/nav-menu";
+import { NavMenu } from "@/components/shared/nav-menu";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,20 +19,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <DndProviders>
-        <body className={inter.className}>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
+    <html lang='pt-br'>
+      <body className={cn([""], inter.className)}>
+        <DndProviders>
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
             enableSystem
             disableTransitionOnChange
           >
             <NavMenu />
             {children}
           </ThemeProvider>
-        </body>
-      </DndProviders>
+        </DndProviders>
+      </body>
     </html>
   );
 }
